@@ -1,19 +1,19 @@
 # AiAccountCenter 完整实施方案
 
 - 文档日期：2026-10-13。
-- 项目名：AiAccountCenter（新 Rust 项目）；项目根目录以本文件与 AGENTS.md 的实际位置为准。当前暂存目录为 E:\phpstudy_pro\extraproject\mycount，计划由用户手动改名为 E:\phpstudy_pro\extraproject\AiAccountCenter。
+- 项目名：AiAccountCenter（新 Rust 项目）；项目根目录以本文件与 AGENTS.md 的实际位置为准。当前已核对根目录为 E:\phpstudy_pro\extraproject\AiAccountCenter；mycount 为历史暂存名。
 - 路线：基于 workbuddy-switch 固定源码扩展，以 Rust 实现核心与服务，沿用 Tauri + React + TypeScript。
 - 新项目与旧 Python 项目独立，不复用其代码、数据库或运行环境；旧目录后续另行处理，本轮不执行删除，项目目录改名由用户手动完成。
-- 当前维护方案与文档，环境准备按用户最新指令暂缓。下文全部产品实现、命令参数与发行结构均为开发目标，实际完成状态以 docs/IMPLEMENTATION_STATUS.md 为准。
+- 用户最新明确要求优先补齐缺失开发环境，集中到本机 E:\rustenv，现有兼容工具直接复用，开发环境不随产品打包；产品源码导入与功能开发仍待明确启动。下文全部产品实现、命令参数与发行结构均为开发目标，实际完成状态以 docs/IMPLEMENTATION_STATUS.md 为准。
 
 ## 0. 项目名称与目录切换
 
 | 项目 | 约定 |
 | --- | --- |
 | 新项目正式名称 | AiAccountCenter，Rust + Tauri + React + TypeScript |
-| 当前文档暂存目录 | E:\phpstudy_pro\extraproject\mycount |
-| 用户手动改名后的目录 | E:\phpstudy_pro\extraproject\AiAccountCenter |
-| 旧 Python 项目 | 当前占用最终目录；只作为历史资料，不成为新项目依赖 |
+| 历史文档暂存目录 | E:\phpstudy_pro\extraproject\mycount |
+| 当前已核对目录 | E:\phpstudy_pro\extraproject\AiAccountCenter |
+| 旧 Python 项目 | 只作为历史资料，不成为新项目依赖；不在本轮访问或清理 |
 | 主方案文件 | MYCOUNT-实施方案.md 暂留原文件名；不得由文件名推断产品名或固定根目录 |
 
 以上绝对路径只说明本机安排。后续脚本、缓存、构建与文档链接均从实际项目根目录推导，不能写死 mycount、盘符或用户名。
@@ -242,7 +242,7 @@ Web 采用同源静态页面与 /api，认证保护全部账号/任务/导入导
 
 环境与基线导入详见 [DEVELOPMENT.md](docs/DEVELOPMENT.md)，部署详见 [DEPLOYMENT.md](docs/DEPLOYMENT.md)。
 
-- Windows 开发需实际验证 Rust MSVC 工具链、链接器/SDK、Node 与 WebView2。已有工具可复用，新系统组件单独授权。
+- Windows 开发需实际验证 Rust MSVC 工具链、链接器/SDK、Node 与 WebView2。已有工具优先复用；本轮已授权补齐必要开发环境，系统安装的目录外影响先说明并记录。
 - Linux 只构建 server/core 的实际依赖，不使用 cargo build --workspace 把 Tauri 桌面引入无桌面镜像。
 - Linux 首版目标 x86_64；发行包明确 glibc/系统基线。musl、ARM64 与跨编译不是未经验证的默认承诺。
 - Rust 静态嵌入前端资源前先生成生产 dist/，发行环境不需要 npm/Vite 开发服务器。
@@ -269,7 +269,7 @@ Web 采用同源静态页面与 /api，认证保护全部账号/任务/导入导
 
 | 阶段 | 前置 | 工作与阶段出口 |
 | --- | --- | --- |
-| T00 范围与基线核对 | 文档/只读授权 | 确认用户手动目录切换状态、Rust 路线、Git、三个提交、能力缺口与最小环境；环境安装暂缓，记录未验证项 |
+| T00 范围与基线核对 | 文档/只读授权 | 核对当前新 Rust 根目录、Git、三个提交、能力缺口与最小环境；优先完成已授权的环境安装和隔离验证，记录未验证项 |
 | T01 上游导入与隔离基线 | T00；开发和项目内环境授权 | 安全引入固定源码与历史，保留本套文档；改独立标识/路径，关闭启动副作用，复现前后端及 Windows 基线，接入创建 WebView 前的检测和原生失败提示 |
 | T02 三种运行形态 | T01 | 同源 Web、可配置监听、能力权限、Linux 非桌面构建；认证未完成时仅回环访问 |
 | T03 数据与管理安全 | T02 | 统一账号/加密凭据、管理登录、账本、迁移、备份；认证和权限检查通过后才开放远程监听 |
@@ -284,7 +284,7 @@ Web 采用同源静态页面与 /api，认证保护全部账号/任务/导入导
 
 ### 11.1 T00–T03 具体约束
 
-T00 不安装工具。本轮只形成方案证据，开发开始前补 Git/工具链/链接器实际核对。
+T00 优先完成用户已授权的最小环境准备，补齐 Git/工具链/链接器实际核对和隔离验证；不据此开始产品源码导入或功能开发。
 
 T01 不能在已有文档目录执行会覆盖文件的 clone/checkout。先核对冲突清单并建立本地文档基线，再引入上游历史，冲突保留 AiAccountCenter 文档并保留上游原 README 来源。步骤见开发文档。不执行上游发布脚本，不启动未隔离的原服务。
 

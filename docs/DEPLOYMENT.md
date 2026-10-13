@@ -15,7 +15,7 @@
 
 ## 2. 拟定服务入口契约
 
-桌面可执行文件拟为 AiAccountCenter.exe；在既有 wb-switch-server 上适配对外服务名 ai-account-center-server，保留内部 crate 名减少上游差异。开发根目录当前为 mycount、将由用户手动改为 AiAccountCenter；部署参数和产物名称不绑定源码文件夹名。
+桌面可执行文件拟为 AiAccountCenter.exe；在既有 wb-switch-server 上适配对外服务名 ai-account-center-server，保留内部 crate 名减少上游差异。开发根目录已核对为新 Rust AiAccountCenter，mycount 为历史暂存名；部署参数和产物名称不绑定源码文件夹名。
 
 | 参数/配置 | 目标语义 |
 | --- | --- |
@@ -81,7 +81,7 @@ Rust/Tauri 桌面运行需要 WebView2；用户不需要安装 Rust、Node、Pyt
 - 安装组件只使用微软官方来源并核对数字签名；随包完整安装器记录版本、架构、摘要与来源。在线下载保持证书校验，不回退不可信镜像或忽略校验。
 - Evergreen 由其更新机制维护；应用兼容当前稳定 Runtime，并对即将到来的版本进行必要回归。使用固定版时由本项目发行跟进更新，不把固定版描述为自动更新。
 - 卸载 AiAccountCenter 默认保留账号数据，不卸载供其他应用共享的 Evergreen Runtime，不降级或替换其他应用的运行时。
-- 这里描述的是最终产品安装流程。开发 Agent 在当前电脑执行系统安装仍受单独授权与用户暂缓环境的指令约束，本轮不进行安装。
+- 这里描述的是最终产品安装流程。开发机环境准备已获用户授权，优先复用已有 SDK/Runtime，只补必要组件并记录目录外影响；发行设计本身不扩大开发机安装授权。
 
 ### 4.4 其他发行要求
 

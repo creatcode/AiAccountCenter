@@ -1,77 +1,87 @@
 # 开发环境、源码导入与上游维护
 
-日期：2026-10-13。当前仅文档阶段。用户明确暂缓环境准备；本轮不下载/安装工具，不导入产品源码，不执行构建。以下步骤在用户恢复相应任务并具备对应授权后执行。
+日期：2026-10-14。用户已明确优先补齐缺失开发环境，并指定本轮新增工具、安装包和工具缓存集中到 E:\rustenv；现有兼容环境直接复用。开发环境不随源码或发行包打包。产品源码导入与功能开发仍待明确启动；下文产品构建步骤在对应授权后执行。
 
-## 1. 原环境证据与可移植要求
+## 1. 实际环境与兼容边界
 
-本次会话只读核对：Windows 10 x64 Build 19045、PowerShell 7.6.5；Git 可解析；Node v22.19.0、npm 10.9.3 可执行。命令和常见位置未发现可用 Rust 工具链；常见 VS 安装位置、安装登记及实例目录未发现可用 MSVC。Windows SDK 10.0.26100.0 的头文件/库/工具目录存在，WebView2 Runtime 154.0.4258.62 已登记安装。尚未实际编译/链接或运行 Tauri，不能据此宣称完整环境已可用。Docker 未在命令中解析到，未作全机扫描。
+当前已验证 Windows 10 x64 Build 19045、PowerShell 7.6.5、Git 2.39.1.windows.1、Node v22.19.0、npm 10.9.3。Git/Node/npm 复用原安装，没有升级或重装；SDK 10.0.26100.0 复用 E:\Windows Kits\10。WebView2 Runtime 154.0.4258.62 已登记安装，本轮没有重新安装，实际创建 WebView/Tauri 基线仍待产品阶段验证。
 
-已有 Python 3.13.16 仅用于只读 ZIP/文本分析，不是 AiAccountCenter 开发、部署或发行版的必装依赖。上述机器路径、版本都只是证据，不是跨机器硬要求。
+本轮补齐 Rust 1.98.1（x86_64-pc-windows-msvc）、Cargo 1.98.1、rustfmt 1.9.0-stable、clippy 0.1.98、rustup 1.29.1，以及 Visual Studio 2022 Build Tools 17.14.41 / MSVC 14.44.35207。Rust 为已核对的固定稳定版本，不自动跟随 stable；这不是已确定的产品 MSRV。最小 C 程序已使用 Windows API 编译/链接/运行，Rust 最小程序也已链接并运行，输出分别为 msvc-sdk-ok 与 rust-link-ok。
 
-主基线锁文件：Vite 7.3.6 的 Node engines 为 ^20.19.0 || >=22.12.0；Vitest 5.0.2 为 ^22.12.0 || ^24.0.0 || >=26.0.0。本机 Node 满足这些元数据，不等于 npm ci、测试与桌面打包已经通过。开发优先使用仍受维护且兼容锁文件的稳定 Node LTS。
+原环境缺少可用 Rust/MSVC，本轮先安装到项目 .tools；用户随后指定 E:\rustenv，Rust/Cargo 已迁入，项目内 MSVC 实例已通过官方卸载器卸载后重新安装到 E:\rustenv\msvc，两个最终安装器退出码均为 0。不得直接搬动或复制已登记的 MSVC 安装目录。
 
-Rust 先查锁文件、各 crate rust-version 与目标依赖，再选验证过的稳定版本。记录 rustc -Vv、cargo -V、目标 triple 和链接器。上游 edition=2021、注释里的本机 1.98.1 都不能替代实际 MSRV。
+主基线锁文件：Vite 7.3.6 的 Node engines 为 ^20.19.0 || >=22.12.0；Vitest 5.0.2 为 ^22.12.0 || ^24.0.0 || >=26.0.0。本机 Node 满足已核对元数据，不等于 npm ci、产品测试与桌面打包已经通过。开发只补缺项；已有兼容版本不因搬迁便利重复下载或安装。
 
-### 1.1 暂存目录与用户手动改名
+Python 3.13.16 仅复用为文本/JSON 分析工具，不是产品必装依赖。所有本机路径和版本都是环境证据；其他机器按实际兼容条件准备，不能把本机 SDK/WebView2 版本作为发行最低要求。Linux/Docker 未验证，本轮不安装 Docker、WSL 或 Linux 系统组件。
 
-项目正式名为 AiAccountCenter；当前在 E:\phpstudy_pro\extraproject\mycount 暂存，用户手动切换后的根为 E:\phpstudy_pro\extraproject\AiAccountCenter。按实施方案第 0 节执行边界：Agent 不删除/移动/重命名目录，不合并旧 Python 项目，不自动创建已废弃的暂存路径。
+### 1.1 项目根与外部开发环境根
 
-进入任务先按实际文档确定新 Rust 根目录。当前环境准备暂缓，尚无需迁移的私有 Rust 工具链；后续安装尽量局限于项目 .tools/，MSVC/SDK 等共享系统组件如有不可避免目录外写入，应先说明准确影响并按对应授权处理。
+项目实际根已核对为新 Rust AiAccountCenter，mycount 仅为历史暂存名。项目根从脚本自身位置计算，不依赖当前工作目录；Agent 不执行项目目录删除、合并或改名。
 
-所有环境入口从自身所在项目根目录计算路径，仅设置当前进程/子进程变量。目录改名后重新计算 RUSTUP_HOME、CARGO_HOME、CARGO_TARGET_DIR、缓存/临时目录和构建路径；检查工具生成配置中的旧绝对路径并验证。原安装可复用不代表缓存/工具链保证跨机器可直接搬运。
+开发环境根与项目根独立。本机默认 E:\rustenv，其他位置通过 AI_ACCOUNT_CENTER_ENV_ROOT 或 -EnvironmentRoot 指定；该默认值是本机约定，不是其他机器必须有 E 盘的要求。只设置当前进程/子进程变量，不改系统/用户 PATH、Shell 配置、执行策略、HOME/USERPROFILE 或全局 npm/Cargo 配置。
 
-## 2. 最小环境清单
+## 2. 最小环境清单与官方来源
 
-| 工具/条件 | 用途 | 来源与处理 | 当前状态 |
-| --- | --- | --- | --- |
-| Git | 基线导入、上游差异和本地回滚 | 复用已安装 Git | 可解析，未在新目录初始化 |
-| Node/npm | 前端安装、测试与生产构建 | 复用兼容版本；必要便携包放 .tools/ | 本轮版本已核对，未安装依赖 |
-| Rust/rustup/cargo | core/server/桌面编译 | 官方稳定工具链，新增安装局限项目 | 未确认可用 |
-| rustfmt/clippy | Rust 格式和静态检查 | 对应已选工具链组件 | 未确认 |
-| MSVC/Windows SDK | Windows Rust/Tauri 链接 | 已有 SDK 优先复用；MSVC 如需新增按最小组件处理 | 未发现可用 MSVC；SDK 10.0.26100.0 目录存在，链接待验证 |
-| WebView2 Runtime | Windows 桌面运行 | 复用满足发行最低版本的正式 Runtime；开发机不重复安装 | 本机 154.0.4258.62 已登记，实际环境创建待验证 |
-| Linux 构建/运行环境 | 无桌面服务与 ABI 验证 | 经授权的本地/远程目标 | 未提供 |
-| Docker | 可选容器构建/运行 | 仅复用已授权可用服务 | 命令未解析到 |
+| 工具/条件 | 用途 | 实际处理与状态 |
+| --- | --- | --- |
+| Git | 基线导入与本地回滚 | 复用 E:\Git\cmd\git.exe，2.39.1.windows.1；已有项目 Git 不重新初始化 |
+| Node/npm | 前端依赖与构建 | 复用 E:\Nodejs，22.19.0 / 10.9.3；没有安装 Node 包或产品依赖 |
+| Rust/rustup/Cargo | 核心、服务与桌面编译 | 新增到环境根 rustup/、cargo/；版本与最小编译检查通过 |
+| rustfmt/clippy | 格式和静态检查 | 安装对应工具链组件，版本调用通过；尚未检查产品代码 |
+| MSVC | Windows C/C++ 编译和 Rust 链接 | 新增到环境根 msvc/；只选择 Microsoft.VisualStudio.Component.VC.Tools.x86.x64，不含完整 IDE |
+| Windows SDK | Windows 头文件、库与资源工具 | 复用 10.0.26100.0，实际 C/Rust 链接通过 |
+| WebView2 Runtime | Windows 桌面运行 | 复用已有登记；创建环境和 Tauri 产品运行待验收 |
+| Linux / Docker | 后续服务部署验证 | 未验证；Docker 可选，不作为当前开发前提 |
 
-下载/安装前说明具体版本、来源、文件摘要、下载目录、安装目录、缓存/临时位置和目录外写入。禁止自动升级全部依赖来解决单一兼容问题。
+Rust 使用[官方 rustup 安装方式](https://rust-lang.org/tools/install/)及[自定义工具目录](https://rust-lang.github.io/rustup/installation/index.html)。固定安装器为 https://static.rust-lang.org/rustup/archive/1.29.1/x86_64-pc-windows-msvc/rustup-init.exe ，SHA-256 为 6f4bef66261261fcb43131be8720bab817d403a09edec7455c371974b90bdb7e，已与同源 .sha256 校验。
 
-## 3. 项目内目录与变量
+MSVC 使用[微软官方 Build Tools 安装器](https://learn.microsoft.com/en-us/visualstudio/install/use-command-line-parameters-to-install-visual-studio?view=vs-2022)。本轮固定下载地址为 https://download.visualstudio.microsoft.com/download/pr/bc92e2cb-33de-4a0c-995d-efa817f16b16/985969f472caad75d993a5cb4c35a6a4271460cc12b343e2433b994d173aa990/vs_BuildTools.exe ，SHA-256 为 985969f472caad75d993a5cb4c35a6a4271460cc12b343e2433b994d173aa990，Authenticode 为 Valid / Microsoft Corporation。
 
-沿用根 src/、src-tauri/、crates/、vendor/、package.json、node_modules/、dist/，不套一层无必要的 frontend/。
+MSVC 主体虽在环境根，官方安装器仍写 C:\Program Files (x86)\Microsoft Visual Studio\Installer、C:\ProgramData\Microsoft\VisualStudio、用户 AppData 下安装日志/状态及系统登记。沿用原有 CachePath=E:\Microsoft Visual Studio\Packages、SharedInstallationPath=E:\Microsoft Visual Studio\Shared、KeepDownloadedPayloads=0；未修改这些既有全局配置。不能声称环境完全位于 E:\rustenv 或完全便携。初次项目缓存路径超过[微软安装器 50 字符限制](https://learn.microsoft.com/en-us/visualstudio/install/configure-policies-for-enterprise-deployments?view=vs-2022)，实际安装因此保留既有策略；静默卸载须以管理员身份启动。
+
+误额外下载的 Node 22.23.3 便携包仅保留在环境根 downloads/，没有解压、安装、使用或打包；后续不再为已有兼容环境重复准备工具。
+
+## 3. 目录、入口与其他机器复现
 
 | 位置 | 内容 |
 | --- | --- |
-| .tools/rustup/ | 新增项目私有工具链与组件 |
-| .tools/cargo/ | 项目私有 Cargo home；含 rustup shim/bin、registry/git 缓存 |
-| .cache/npm/ | npm 缓存 |
-| .cache/packaging/、.cache/tests/ | 打包/测试缓存与日志 |
-| .downloads/ | 原始上游归档及安装包 |
-| .tmp/ | 当前进程安装、编译和测试临时文件 |
-| .runtime/ | 合成数据、隔离 home、调试数据与浏览器配置 |
-| build/cargo/ | CARGO_TARGET_DIR |
-| dist/ | Vite 生产静态文件，供 RustEmbed/Tauri 使用 |
-| build/release/ | 整理后的可交付产物 |
+| 环境根 rustup/ | 新增 Rust 工具链与组件 |
+| 环境根 cargo/ | Cargo bin 与 registry/git 缓存；rustup 自动自更新已关闭 |
+| 环境根 msvc/ | 官方登记的 C++ Build Tools 安装主体 |
+| 环境根 downloads/ | 官方安装器、校验文件及本轮下载记录，不随产品打包 |
+| 环境根 cache/npm/ | npm 缓存，实际 npm config get cache 已核对 |
+| 环境根 tmp/、checks/AiAccountCenter/ | 安装临时文件、最小编译验证源码与产物 |
+| 项目 node_modules/、dist/ | 后续前端依赖与静态构建结果 |
+| 项目 build/cargo/、build/release/ | 后续编译缓存与仅含产品的最终发行包 |
+| 项目 .cache/、.tmp/、.runtime/、.downloads/ | 后续产品测试、隔离数据与参考资料，按需使用 |
 
-Cargo home 的 registry/git 与 bin/toolchain 管理存在关联，采用 .tools/cargo/ 内统一布局以避免非标准符号链接。它是“Cargo 缓存位于 .cache/”规则的明确工具约束例外，实际下载仍完全在项目内；其他工具缓存放 .cache/。需要改变此布局时先核对 rustup/Cargo 实际写入，不能只改文档路径。
-
-PowerShell 7 当前进程设置示例，须先切到已确认的项目根目录。所需目录在授权的实际安装/构建前按需创建：
+在 PowerShell 7 的项目根执行：
 
 ~~~powershell
-$projectRoot = (Get-Location).Path
-$env:RUSTUP_HOME = Join-Path $projectRoot '.tools\rustup'
-$env:CARGO_HOME = Join-Path $projectRoot '.tools\cargo'
-$env:CARGO_TARGET_DIR = Join-Path $projectRoot 'build\cargo'
-$env:npm_config_cache = Join-Path $projectRoot '.cache\npm'
-$env:TEMP = Join-Path $projectRoot '.tmp'
-$env:TMP = $env:TEMP
-$env:TMPDIR = $env:TEMP
+. .\scripts\dev-env.ps1
+.\scripts\check-env.ps1
 ~~~
 
-Linux 仅对当前 Shell/子进程设置对应绝对目录，不改 ~/.profile、系统 HOME 或全局包配置。新增 rustup 使用自定义 homes、--no-modify-path 和经核对的固定工具链，不运行未经审阅的管道安装脚本。
+指定另一处已准备的环境根：
 
-已有目录外 Rustup 默认可能写用户缓存/更新检查；优先核对并关闭非必要更新检查或使用获授权的私有工具链，不擅自改原安装。构建 SQLite bundled 等依赖仍可能需要 C 编译工具，不能因为主要语言是 Rust 就忽略链接器。
+~~~powershell
+. .\scripts\dev-env.ps1 -EnvironmentRoot 'D:\devtools\rustenv'
+~~~
 
-前端依赖执行项目 npm ci，不全局安装、不让 npx 自动下载工具。实际运行 npm.cmd/cargo.exe 等明确路径，避免 PowerShell 策略或 PATH 歧义。
+dev-env.ps1 只加载当前进程环境，固定使用本轮验证的 Rust 1.98.1，并加载 x64 MSVC/已有 SDK；不下载或安装任何组件。check-env.ps1 检查实际命令路径、版本、C/Windows API 编译运行、Rust 链接运行和 npm 缓存路径，验证文件只写环境根 checks/。源码根由脚本定位，环境不随项目目录改名移动；移动已登记的 MSVC 必须按官方安装流程处理。
+
+其他机器先核对 Git、Node/npm、Rust、MSVC、SDK、Runtime，兼容项直接复用。只在 Rust 缺失且已获安装授权时，设置选定环境根的 RUSTUP_HOME=rustup/、CARGO_HOME=cargo/、TEMP/TMP=tmp/，下载并校验上述官方安装器后执行：
+
+~~~powershell
+& "$environmentRoot\downloads\rustup-init-1.29.1.exe" -y --no-modify-path --default-host x86_64-pc-windows-msvc --default-toolchain 1.98.1 --profile minimal --component rustfmt,clippy
+& "$environmentRoot\cargo\bin\rustup.exe" set auto-self-update disable
+~~~
+
+示例变量 $environmentRoot 必须指向事先确认并按需创建的目录，不能把本机 E:\rustenv 写成其他机器的硬要求。已有 Rust 时不重复安装；按实际 homes 与已安装稳定版本设置当前进程变量、重新验证，不盲目运行上述缺项安装步骤。当前脚本是本轮固定布局的环境入口，不是通用自动安装器。
+
+只有 MSVC 缺失时才使用上述已校验安装器，以 --installPath 指定环境根 msvc/，仅 --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64、--addProductLang en-US、--quiet --wait --norestart；已有 SDK 优先复用，不加 --includeRecommended/Optional。系统组件的实际共享路径和权限需按目标机器核对；缺 SDK/Runtime 时按实际缺口和对应授权另行处理。Linux 另用适配目标的工具链和环境变量，Windows 编译结果不能替代 Linux 验证。
+
+前端开发后执行项目 npm ci，不全局安装、不让 npx 自动下载工具。使用 npm.cmd 避免 PowerShell 策略歧义。测试真实客户端前继续遵守第 5 节隔离约束，不能用修改 HOME/USERPROFILE 的方式改变真实客户端路径。
 
 ## 4. 导入上游的可执行顺序
 
@@ -133,4 +143,4 @@ Linux 仅选择 core/server 包构建，检查 cargo tree 的依赖闭包与运�
 
 代码开发开始后，按实际生成目录维护 .gitignore，忽略 .tools、.downloads、.cache、.tmp、.runtime、node_modules、build、dist、凭据与 secret。保留 Cargo.lock、package-lock.json、必要来源/补丁和部署模板；不把整个 vendor 目录笼统忽略。
 
-仅文档阶段不创建工具目录、锁文件、Git 仓库或安装脚本。所有新增环境、检查命令、实际写入路径与目录外限制写入实施状态。
+当前允许创建环境准备所需的工具目录和脚本，按需维护 .gitignore；不创建产品源码或产品依赖锁文件，不重新初始化已有 Git。所有新增环境、检查命令、实际写入路径与目录外限制写入实施状态。

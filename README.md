@@ -2,7 +2,7 @@
 
 项目名统一为 AiAccountCenter，继续采用 Rust 路线。基于 [changexbc/workbuddy-switch](https://github.com/changexbc/workbuddy-switch) 扩展的独立账号管理项目，采用 Rust + React + TypeScript，覆盖 WorkBuddy 国内/国际版、CodeBuddy 工具、Trae 和 Qoder。
 
-文档日期：2026-10-13。当前阶段：方案与项目文档已建立，尚未引入上游源码、安装依赖或开始产品开发。
+文档日期：2026-10-14。当前阶段：最小 Windows 开发环境已安装并验证；尚未引入产品源码或开始功能开发。环境实际结果见 docs/IMPLEMENTATION_STATUS.md。
 
 ## 项目定位
 
@@ -11,7 +11,7 @@
 - Linux 无桌面运行：不依赖图形桌面、目标 AI 客户端或桌面密钥环；支持直接运行，Docker/Compose 为可选部署方式。
 - 自动任务由持续运行的后端执行。浏览器关闭后任务继续；后端停止后任务停止，不承诺关机后继续执行。
 
-本项目重新建立代码基础，保留并扩展 workbuddy-switch 的 Rust/Tauri/React 架构。旧 Python 项目不作为产品代码、运行时或数据库依赖。当前文档暂存于 `mycount`；方案确定、旧目录另行处理后，由用户手动把暂存目录改名为 `AiAccountCenter`。Agent 不执行项目目录删除或改名。目录约定见实施方案第 0 节。
+本项目重新建立代码基础，保留并扩展 workbuddy-switch 的 Rust/Tauri/React 架构。旧 Python 项目不作为产品代码、运行时或数据库依赖。当前已核对目录为新 Rust `AiAccountCenter`；`mycount` 为历史暂存名。Agent 不执行项目目录删除或改名。目录约定见实施方案第 0 节。
 
 Windows 桌面首版提供在线与离线安装包：检测并复用满足要求的 WebView2，缺失或版本过低时处理安装/升级；启动前检测失败须显示原生修复提示，避免白屏。Windows/Linux 独立 Web 服务不依赖 WebView2。详情见 [部署设计第 4 节](docs/DEPLOYMENT.md#4-windows-桌面发行与-webview2-兼容)。
 
@@ -35,7 +35,7 @@ Windows 桌面首版提供在线与离线安装包：检测并复用满足要求
 | [项目指令](AGENTS.md) | 授权、操作目录、文件规则、编码和验证要求 |
 | [参考资料](docs/REFERENCE_SOURCES.md) | 三个固定提交、校验记录、源码定位和许可处理 |
 | [能力矩阵](docs/CAPABILITY_MATRIX.md) | 平台、区域、客户端、运行模式与不支持项 |
-| [开发环境与上游维护](docs/DEVELOPMENT.md) | 项目内工具与缓存、基线导入、构建和上游更新 |
+| [开发环境与上游维护](docs/DEVELOPMENT.md) | 外部开发环境与工具缓存、基线导入、构建和上游更新 |
 | [安全与数据](docs/SECURITY_AND_DATA.md) | 凭据、管理会话、迁移、并发、任务与恢复规则 |
 | [界面要求](docs/UI_REQUIREMENTS.md) | 沿用上游界面、页面清单、状态和跨端行为 |
 | [部署设计](docs/DEPLOYMENT.md) | Windows、Linux 直接运行、Docker、备份和更新 |
@@ -47,4 +47,4 @@ Windows 桌面首版提供在线与离线安装包：检测并复用满足要求
 
 当前目录只有文档，没有可运行的 AiAccountCenter 程序。文档中的接口、参数、目录结构和部署配置若标记为“设计目标”，须实现后才能使用。
 
-本轮继续维护方案及配套文档。用户已明确暂缓环境准备，当前不下载、安装或启动开发工具；目录改名由用户手动处理。源码导入、依赖准备、开发、真实账号操作、客户端写入和发布分别遵循 [AGENTS.md](AGENTS.md) 的授权规则。
+用户已明确恢复并优先补齐缺失开发环境，本机新增工具、安装包和工具缓存集中到 E:\rustenv；已有兼容 Node/Git/SDK/WebView2 直接复用。开发环境不提交、不随产品打包，其他机器按开发文档指定环境根并补缺；Agent 不执行项目目录改名。源码导入、依赖准备、开发、真实账号操作、客户端写入和发布分别遵循 [AGENTS.md](AGENTS.md) 的授权规则。

@@ -1,0 +1,9 @@
+.tools/
+.downloads/
+.cache/
+.tmp/
+.runtime/
+node_modules/
+build/
+dist/
+testdata/
