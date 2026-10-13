@@ -1,0 +1,441 @@
+[
+  {
+    "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXVzhVVkZuS0lNSnl3cFdQWjBEWTZxeE9LQ2dpcVVjNXN3RHBkVjM1UUV3In0.eyJleHAiOjE4MjEwMDI2NDAsImlhdCI6MTc5MTg4NDk4OCwiYXV0aF90aW1lIjoxNzg5NDY2NjQwLCJqdGkiOiIwNjY1Y2I2OC1iZmIyLTQzOTEtYjM0ZC1hM2IwYjc5ZGI0Y2IiLCJpc3MiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI3ODU1YmNkZi0xMDMxLTRjNzMtOTIxYy02Y2YwZGU1MzZjMGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiNzYyZmNjZGEtY2NjNi00Njc0LWI4MWQtYjBjZDIyOTVkMWI2IiwiYWNyIjoiMCIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgb2ZmbGluZV9hY2Nlc3MgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IumjniDliJgiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzampzamo0ODRAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6IumjniIsImZhbWlseV9uYW1lIjoi5YiYIiwiZW1haWwiOiJzampzamo0ODRAZ21haWwuY29tIn0.YK10d3zqqhGStl6R3jk1pI-z3yjwtmoxVg5Jw-oRAgSPdegvxY8AH1kRP79qj2-e1UYmhLiyUm7iC_M2FQr-gX4siNlYqwPGmWj9-7YO8P4k-FPItxCiNOdPLcg1lYN28h4Wu9xExrou-imtnZq0QgMDccJKL6DFEIujwWRgbzDlpsT4ng7EV3UAR6uE52sd-AC7luss5R88SYxUbiMxDYWrbvzm7XWS32szNfAonIXyfEw9t7iFRE_87dSqprsZwdTVTkOSu7D_YB3L_0cjz14b740GjBHdKw34-D3aM1QIM7ubCQfpb1XIOegr7FhGbWsFfAIs7MhuJVBS_FW70w",
+    "auth_raw": {
+      "account": {
+        "accountType": "",
+        "areaInfoComplete": true,
+        "deployStatus": {
+          "detailMsg": "",
+          "statusCode": 0,
+          "statusMsg": ""
+        },
+        "idp": "",
+        "isAdmin": false,
+        "isCreator": false,
+        "isCurrentOneIdEnterprise": false,
+        "isCurrentOneIdPersonal": false,
+        "isFirstLogin": false,
+        "lastLogin": true,
+        "nickname": "sjjsjj484@gmail.com",
+        "oneidAccountId": "",
+        "pluginEnabled": true,
+        "sso": {
+          "domain": "",
+          "domainModifiedTimes": 0
+        },
+        "type": "personal",
+        "uid": "7855bcdf-1031-4c73-921c-6cf0de536c0f",
+        "uin": "450701752705"
+      },
+      "accounts": [
+        {
+          "accountType": "",
+          "areaInfoComplete": true,
+          "deployStatus": {
+            "detailMsg": "",
+            "statusCode": 0,
+            "statusMsg": ""
+          },
+          "idp": "",
+          "isAdmin": false,
+          "isCreator": false,
+          "isCurrentOneIdEnterprise": false,
+          "isCurrentOneIdPersonal": false,
+          "isFirstLogin": false,
+          "lastLogin": true,
+          "nickname": "sjjsjj484@gmail.com",
+          "oneidAccountId": "",
+          "pluginEnabled": true,
+          "sso": {
+            "domain": "",
+            "domainModifiedTimes": 0
+          },
+          "type": "personal",
+          "uid": "7855bcdf-1031-4c73-921c-6cf0de536c0f",
+          "uin": "450701752705"
+        }
+      ],
+      "allAccounts": [
+        {
+          "accountType": "",
+          "areaInfoComplete": true,
+          "deployStatus": {
+            "detailMsg": "",
+            "statusCode": 0,
+            "statusMsg": ""
+          },
+          "idp": "",
+          "isAdmin": false,
+          "isCreator": false,
+          "isCurrentOneIdEnterprise": false,
+          "isCurrentOneIdPersonal": false,
+          "isFirstLogin": false,
+          "lastLogin": true,
+          "nickname": "sjjsjj484@gmail.com",
+          "oneidAccountId": "",
+          "pluginEnabled": true,
+          "sso": {
+            "domain": "",
+            "domainModifiedTimes": 0
+          },
+          "type": "personal",
+          "uid": "7855bcdf-1031-4c73-921c-6cf0de536c0f",
+          "uin": "450701752705"
+        }
+      ],
+      "auth": {
+        "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXVzhVVkZuS0lNSnl3cFdQWjBEWTZxeE9LQ2dpcVVjNXN3RHBkVjM1UUV3In0.eyJleHAiOjE4MjEwMDI2NDAsImlhdCI6MTc4OTU1NjczNywiYXV0aF90aW1lIjoxNzg5NDY2NjQwLCJqdGkiOiI0ZDVjNjRlNC04ZDY2LTRjZmYtODk5YS00NTZjZWQzNzI3NzkiLCJpc3MiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI3ODU1YmNkZi0xMDMxLTRjNzMtOTIxYy02Y2YwZGU1MzZjMGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiNzYyZmNjZGEtY2NjNi00Njc0LWI4MWQtYjBjZDIyOTVkMWI2IiwiYWNyIjoiMCIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgb2ZmbGluZV9hY2Nlc3MgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IumjniDliJgiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzampzamo0ODRAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6IumjniIsImZhbWlseV9uYW1lIjoi5YiYIiwiZW1haWwiOiJzampzamo0ODRAZ21haWwuY29tIn0.SQOjLeC6I-h_Yw33aXOvM2aEGFJMIt-fDnLpKsQ6HHdltGXYitD0z0f1M6xzUS3zpNLVrYB2HNYmVXfB7bXCQonbMxfa4ALsUNAY4LKKwvH1l2ArCp0jE_hXhi_cx3PoE8xGRtfRESh3AGNAmt6T6f0Xx82FiqmAir1bBlxrRojzk01KASs6qg9QK08T9aoafrXT-JcMCdVbCN3UH56-sjtWWKIT3ux4-vDu3RlKuk0BVqmVUtga6ftl28bg1zdIP9U4LsKV9GrUWshlsY78kh8eqoiusw6kchaamM2IWmSoWtwdTlBYpduEKouHFhnfgrWtfL_ji9drPDxpP7gScA",
+        "domain": "www.workbuddy.ai",
+        "expiresAt": 1821002640700,
+        "expiresIn": 31445903,
+        "lastRefreshTime": 1789556737990,
+        "refreshExpiresAt": 1821002640700,
+        "refreshExpiresIn": 31445903,
+        "refreshToken": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjMWM0OWU5Yi0wYWU2LTQyMWMtOTVmOS05ODdiMDk4NjljNTUifQ.eyJleHAiOjE4MjEwMDI2NDAsImlhdCI6MTc4OTU1NjczNywianRpIjoiMTZlZjRlMDEtMzIwNC00MmZlLWFiMTYtMTQ4ZjBjY2I2MmE2IiwiaXNzIjoiaHR0cHM6Ly93d3cud29ya2J1ZGR5LmFpL2F1dGgvcmVhbG1zL2NvcGlsb3QiLCJhdWQiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsInN1YiI6Ijc4NTViY2RmLTEwMzEtNGM3My05MjFjLTZjZjBkZTUzNmMwZiIsInR5cCI6Ik9mZmxpbmUiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiNzYyZmNjZGEtY2NjNi00Njc0LWI4MWQtYjBjZDIyOTVkMWI2Iiwic2NvcGUiOiJvcGVuaWQgYWNyIHByb2ZpbGUgYmFzaWMgd2ViLW9yaWdpbnMgcm9sZXMgb2ZmbGluZV9hY2Nlc3MgZW1haWwifQ.D6xm6_mSVWfCIDdhJ32bg864JQ4jHlOnDO2j9FPpw7pyQ1xoeCCgYJ7fLt6b65UlSZ681a_5QVN92pE-9akCUg",
+        "scope": "openid profile offline_access email",
+        "sessionState": "762fccda-ccc6-4674-b81d-b0cd2295d1b6",
+        "tokenType": "Bearer"
+      }
+    },
+    "createdAt": 1789693498087,
+    "domain": "www.workbuddy.ai",
+    "email": null,
+    "enterpriseId": null,
+    "enterpriseName": null,
+    "expiresAt": 1821002639133,
+    "id": "1a131a96-36fa-4dfd-ba19-8a6fb69a0e47",
+    "nickname": "sjjsjj484@gmail.com",
+    "profile_raw": {
+      "accountType": "",
+      "areaInfoComplete": true,
+      "deployStatus": {
+        "detailMsg": "",
+        "statusCode": 0,
+        "statusMsg": ""
+      },
+      "idp": "",
+      "isAdmin": false,
+      "isCreator": false,
+      "isCurrentOneIdEnterprise": false,
+      "isCurrentOneIdPersonal": false,
+      "isFirstLogin": false,
+      "lastLogin": true,
+      "nickname": "sjjsjj484@gmail.com",
+      "oneidAccountId": "",
+      "pluginEnabled": true,
+      "sso": {
+        "domain": "",
+        "domainModifiedTimes": 0
+      },
+      "type": "personal",
+      "uid": "7855bcdf-1031-4c73-921c-6cf0de536c0f",
+      "uin": "450701752705"
+    },
+    "refreshExpiresAt": 1821002639133,
+    "refresh_token": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjMWM0OWU5Yi0wYWU2LTQyMWMtOTVmOS05ODdiMDk4NjljNTUifQ.eyJleHAiOjE4MjEwMDI2NDAsImlhdCI6MTc5MTg4NDk4OCwianRpIjoiMWZlM2YxNzgtODBmNy00MjZlLTkzZjItNmRhYjk2MDEzYTU2IiwiaXNzIjoiaHR0cHM6Ly93d3cud29ya2J1ZGR5LmFpL2F1dGgvcmVhbG1zL2NvcGlsb3QiLCJhdWQiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsInN1YiI6Ijc4NTViY2RmLTEwMzEtNGM3My05MjFjLTZjZjBkZTUzNmMwZiIsInR5cCI6Ik9mZmxpbmUiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiNzYyZmNjZGEtY2NjNi00Njc0LWI4MWQtYjBjZDIyOTVkMWI2Iiwic2NvcGUiOiJvcGVuaWQgYWNyIHByb2ZpbGUgYmFzaWMgd2ViLW9yaWdpbnMgcm9sZXMgb2ZmbGluZV9hY2Nlc3MgZW1haWwifQ.0SKx3SdcyWM-wRncTLO7VIbiISoi_uTYveYZqplLjFwI1y6lr2zRWMrXbPYcCLSnvP8nQgf0L6SFrveyoSN2OA",
+    "refreshedAt": 1791884987133,
+    "token_type": "Bearer",
+    "uid": "7855bcdf-1031-4c73-921c-6cf0de536c0f",
+    "variant": "ai"
+  },
+  {
+    "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXVzhVVkZuS0lNSnl3cFdQWjBEWTZxeE9LQ2dpcVVjNXN3RHBkVjM1UUV3In0.eyJleHAiOjE4MjEyMjk1OTcsImlhdCI6MTc5MTg4NDk4OSwiYXV0aF90aW1lIjoxNzg5NjkzNTk3LCJqdGkiOiI1MzE3NGNiOC03MGRlLTQyMWUtODhhNS0wYWY2YWQxNzZmODIiLCJpc3MiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI0NWM2OWZjZC1jNDk2LTQ1NWEtYjhjOC00MzVhN2MzMjk5NDIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiOWYyYTRkNDYtMzgyMC00YTQ2LWEwNmYtNGE2MjllNTRhZmU5IiwiYWNyIjoiMCIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgb2ZmbGluZV9hY2Nlc3MgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoibXl0ZXN0YTczMyIsImVtYWlsIjoiMTMzNDI4MDA4NjVAMTYzLmNvbSJ9.xHtDVmy6aoONagbcn_4DxaHxP6QWAGzM9UBBQA2jYH9BO19W-UazyzN6yCskd9X7onLEt4R_rZPV8J7LKUU93DOyFD-lG1rlD6nzd84-biJBEr_nQ5JJhRWn_huhG_pCP4g42dKzm1JrV0S61HOXph8WH0_QhfEu2mYZ362UVLvuBb0qOhvdgN4-7p0YWurLDn375lj0stsFQ5-L7_rli0quiLS6H1hpvhNm_H20sIlXZMBPdmp5C3aZ16AiYApLnicjJOS9-p_5B0xk5EwkGKKBo75QN30CF1tdihst2F8EEgWzZ6BWOdb8AhUhM6RqIIJ6q49eMYGRtBEINwrXWQ",
+    "auth_raw": {
+      "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXVzhVVkZuS0lNSnl3cFdQWjBEWTZxeE9LQ2dpcVVjNXN3RHBkVjM1UUV3In0.eyJleHAiOjE4MjEyMjk1OTcsImlhdCI6MTc4OTY5MzYwMiwiYXV0aF90aW1lIjoxNzg5NjkzNTk3LCJqdGkiOiJiMDhiOTc1Yy0wZTViLTQ2YjMtYWFjMC1lODkzYmI1YjNlZjgiLCJpc3MiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI0NWM2OWZjZC1jNDk2LTQ1NWEtYjhjOC00MzVhN2MzMjk5NDIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiOWYyYTRkNDYtMzgyMC00YTQ2LWEwNmYtNGE2MjllNTRhZmU5IiwiYWNyIjoiMCIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgb2ZmbGluZV9hY2Nlc3MgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoibXl0ZXN0YTczMyIsImVtYWlsIjoiMTMzNDI4MDA4NjVAMTYzLmNvbSJ9.aTTNPymx-3lEtMT8Gy1rvZrzPPmw3m6NOWPwlhAtdgKfaqySUw-mcCUK_2ixTtmlM91-VZ_09zFXqJuoIs-QWhNhPSdYQ361HGxrdhOzp-zZ4I2VBDtXXHeNTPyKyf0X1uWiR6mJa3gw1EAF2MyP6U2qYy1TkzeJ_lhpn5t5Lng5k-iazsaJ2Qaw06GSvR5XM_3Ejx_g-PB7k6F9ZhAb9eZrkUiFaMQ1MH6C25ZCUkIQjr3D9CVEI_tWQrGQEo31R6-A2Y-1Ah0eRbAWujHVTyUxMxbqi_XVhdNvJAOIMkkK7iN9FZoUHc6lMxtLE5Ux84X6gtJFn2kK5YxA4iiE2g",
+      "domain": "www.workbuddy.ai",
+      "expiresIn": 31535965,
+      "refreshExpiresIn": 31535965,
+      "refreshToken": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjMWM0OWU5Yi0wYWU2LTQyMWMtOTVmOS05ODdiMDk4NjljNTUifQ.eyJleHAiOjE4MjEyMjk1OTcsImlhdCI6MTc4OTY5MzYwMiwianRpIjoiNTYwZDU5ZTUtOWJhNS00NTJiLTg1NzAtNTk0MTA2NTU4N2UyIiwiaXNzIjoiaHR0cHM6Ly93d3cud29ya2J1ZGR5LmFpL2F1dGgvcmVhbG1zL2NvcGlsb3QiLCJhdWQiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsInN1YiI6IjQ1YzY5ZmNkLWM0OTYtNDU1YS1iOGM4LTQzNWE3YzMyOTk0MiIsInR5cCI6Ik9mZmxpbmUiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiOWYyYTRkNDYtMzgyMC00YTQ2LWEwNmYtNGE2MjllNTRhZmU5Iiwic2NvcGUiOiJvcGVuaWQgYWNyIHByb2ZpbGUgYmFzaWMgd2ViLW9yaWdpbnMgcm9sZXMgb2ZmbGluZV9hY2Nlc3MgZW1haWwifQ.8H12Xd1_BNM62B_-VpqJc1oUvYSVR39UrHRKXTLKNR7BTm70RANDfCw9IrqDbLvqcZwL5gr3wCVKvZkrvYy_Ug",
+      "scope": "openid profile offline_access email",
+      "sessionState": "9f2a4d46-3820-4a46-a06f-4a629e54afe9",
+      "tokenType": "Bearer"
+    },
+    "createdAt": 1789693634039,
+    "domain": "www.workbuddy.ai",
+    "email": null,
+    "enterpriseId": null,
+    "enterpriseName": null,
+    "expiresAt": 1821229595287,
+    "id": "5a1b3a48-d359-498e-91b3-c9ee5ff8c401",
+    "nickname": "mytesta733",
+    "profile_raw": {
+      "accountType": "",
+      "areaInfoComplete": true,
+      "deployStatus": {
+        "detailMsg": "",
+        "statusCode": 0,
+        "statusMsg": ""
+      },
+      "idp": "",
+      "isAdmin": false,
+      "isCreator": false,
+      "isCurrentOneIdEnterprise": false,
+      "isCurrentOneIdPersonal": false,
+      "isFirstLogin": false,
+      "lastLogin": true,
+      "nickname": "mytesta733",
+      "oneidAccountId": "",
+      "pluginEnabled": true,
+      "sso": {
+        "domain": "",
+        "domainModifiedTimes": 0
+      },
+      "type": "personal",
+      "uid": "45c69fcd-c496-455a-b8c8-435a7c329942",
+      "uin": "450701788964"
+    },
+    "refreshExpiresAt": 1821229595287,
+    "refresh_token": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjMWM0OWU5Yi0wYWU2LTQyMWMtOTVmOS05ODdiMDk4NjljNTUifQ.eyJleHAiOjE4MjEyMjk1OTcsImlhdCI6MTc5MTg4NDk4OSwianRpIjoiY2FjMDg0YTAtYWM0ZS00ZTFjLWIwMDgtOTQyNDg4YTQxOWQ4IiwiaXNzIjoiaHR0cHM6Ly93d3cud29ya2J1ZGR5LmFpL2F1dGgvcmVhbG1zL2NvcGlsb3QiLCJhdWQiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsInN1YiI6IjQ1YzY5ZmNkLWM0OTYtNDU1YS1iOGM4LTQzNWE3YzMyOTk0MiIsInR5cCI6Ik9mZmxpbmUiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiOWYyYTRkNDYtMzgyMC00YTQ2LWEwNmYtNGE2MjllNTRhZmU5Iiwic2NvcGUiOiJvcGVuaWQgYWNyIHByb2ZpbGUgYmFzaWMgd2ViLW9yaWdpbnMgcm9sZXMgb2ZmbGluZV9hY2Nlc3MgZW1haWwifQ.mYwuMpsYuwXshdWgq2_26zk2wZ1U2fUsYvox-fs54ppSfocp3ZExK3-D74TYYpvQlEgcb3P0NQbzUtHQX9l70w",
+    "refreshedAt": 1791884987287,
+    "token_type": "Bearer",
+    "uid": "45c69fcd-c496-455a-b8c8-435a7c329942",
+    "variant": "ai"
+  },
+  {
+    "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXVzhVVkZuS0lNSnl3cFdQWjBEWTZxeE9LQ2dpcVVjNXN3RHBkVjM1UUV3In0.eyJleHAiOjE4MjE0NDI4NDIsImlhdCI6MTc5MTg4NDk4OSwiYXV0aF90aW1lIjoxNzg5OTA2ODQyLCJqdGkiOiI5MjJiYTM5YS00Yzg2LTQyMWQtYTRjMi0yNjAzNDlkYmMwYTgiLCJpc3MiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkNWQyMzc1MC1kMmM2LTQ2ZDAtODJkYy0wOGUyYjBlNjExNmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiNzg2NDAzZDQtN2NkNi00NGVjLWIzZTYtMGUzY2I4MzIzNmZhIiwiYWNyIjoiMCIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgb2ZmbGluZV9hY2Nlc3MgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZGFueTM3NyIsImVtYWlsIjoiMjcxMzcxNTE4NEBxcS5jb20ifQ.cWthmbfIDwKWlcweJbWJTuAmx3lXfbRrcW7cFNQ6Pe2b6_KJH0kqjajqkgafIUnFSInlLcbxeQSeF0Qf8uxY7LFzcj8WzuyuRNFs7YJoT5CsUZcWtAyDZzXiugFqkVzvxlI6HwDUlsR9d4gp_-rG6rdu6nn_176eYDSHjuNcgBPUxLbubdwU0bQsrpk07MJGMCU9W-EvaRy9ZM673rY2V-c5fP0TbwfaLQrIWdKWoS-rKcf0MXL8wICSGT0KxY3cJWpHJ6L96xRFka1xLy9MAOyvv68dK8r7bCNnNBCRuON404Ce7HR3OTJ6UYLlQI8xYNfdAg89aTmePxdG5_M58g",
+    "auth_raw": {
+      "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXVzhVVkZuS0lNSnl3cFdQWjBEWTZxeE9LQ2dpcVVjNXN3RHBkVjM1UUV3In0.eyJleHAiOjE4MjE0NDI4NDIsImlhdCI6MTc4OTkwNjg0NSwiYXV0aF90aW1lIjoxNzg5OTA2ODQyLCJqdGkiOiIyODM2ZTUyNy05ZTJhLTQ4ZTAtYWQxNy1kMDE0YzNmMjNkMzIiLCJpc3MiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkNWQyMzc1MC1kMmM2LTQ2ZDAtODJkYy0wOGUyYjBlNjExNmMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiNzg2NDAzZDQtN2NkNi00NGVjLWIzZTYtMGUzY2I4MzIzNmZhIiwiYWNyIjoiMCIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgb2ZmbGluZV9hY2Nlc3MgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZGFueTM3NyIsImVtYWlsIjoiMjcxMzcxNTE4NEBxcS5jb20ifQ.T3EqwfUZRwFN6AvP8ByuGlTRSYehaIMG0P2GjWdjd_5N55K8iXx8uIIDVYGEK5zNTKZgY9ECpZhmLWXAA5zeXveTuX2MFfNoBx1jTJnKguoMcZaEHvT5AaKYGn6JcU8SDJbB43B5cvB8GdQzBnIuyZpavv_KlYomdFhb5k5tG8s0w__JCRg0cpEuHZYoVtlAc_LltPzOJiizssPKkgFBgaOcfOR5l26znrR6so-LQOCwfHakPc9wC-SDaK_66qjkmlvX0Elktl5e2TbU-OltfWeFOZI9iYlvRtrCz_BUDZ3FynV_TJJA1hMIAAKF9M4KgD_N3twdyrGfOgisRi05EQ",
+      "domain": "www.workbuddy.ai",
+      "expiresIn": 31368556,
+      "refreshExpiresIn": 31368556,
+      "refreshToken": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjMWM0OWU5Yi0wYWU2LTQyMWMtOTVmOS05ODdiMDk4NjljNTUifQ.eyJleHAiOjE4MjE0NDI4NDIsImlhdCI6MTc4OTkwNjg0NSwianRpIjoiZjQwYmM3ZmYtOGUzMC00NmFiLWI0N2ItMDRkNjAwOTcyYWZjIiwiaXNzIjoiaHR0cHM6Ly93d3cud29ya2J1ZGR5LmFpL2F1dGgvcmVhbG1zL2NvcGlsb3QiLCJhdWQiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsInN1YiI6ImQ1ZDIzNzUwLWQyYzYtNDZkMC04MmRjLTA4ZTJiMGU2MTE2YyIsInR5cCI6Ik9mZmxpbmUiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiNzg2NDAzZDQtN2NkNi00NGVjLWIzZTYtMGUzY2I4MzIzNmZhIiwic2NvcGUiOiJvcGVuaWQgYWNyIHByb2ZpbGUgYmFzaWMgd2ViLW9yaWdpbnMgcm9sZXMgb2ZmbGluZV9hY2Nlc3MgZW1haWwifQ.xx8qZ7ZsVd-6JuaSQ9kHh1Paf3KQELQuACdOiREfnonr2o2xhUy7IIBNFzkVgDKnJ432x03tw3R5yi-tbB6Bwg",
+      "scope": "openid profile offline_access email",
+      "sessionState": "786403d4-7cd6-44ec-b3e6-0e3cb83236fa",
+      "tokenType": "Bearer"
+    },
+    "createdAt": 1789693710432,
+    "domain": "www.workbuddy.ai",
+    "email": null,
+    "enterpriseId": null,
+    "enterpriseName": null,
+    "expiresAt": 1821442840432,
+    "id": "5a4878ad-edd4-42a1-9d07-e6eff8548165",
+    "nickname": "dany377",
+    "profile_raw": {
+      "accountType": "",
+      "areaInfoComplete": true,
+      "deployStatus": {
+        "detailMsg": "",
+        "statusCode": 0,
+        "statusMsg": ""
+      },
+      "idp": "",
+      "isAdmin": false,
+      "isCreator": false,
+      "isCurrentOneIdEnterprise": false,
+      "isCurrentOneIdPersonal": false,
+      "isFirstLogin": false,
+      "lastLogin": true,
+      "nickname": "dany377",
+      "oneidAccountId": "",
+      "pluginEnabled": true,
+      "sso": {
+        "domain": "",
+        "domainModifiedTimes": 0
+      },
+      "type": "personal",
+      "uid": "d5d23750-d2c6-46d0-82dc-08e2b0e6116c",
+      "uin": "450701752877"
+    },
+    "refreshExpiresAt": 1821442840432,
+    "refresh_token": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjMWM0OWU5Yi0wYWU2LTQyMWMtOTVmOS05ODdiMDk4NjljNTUifQ.eyJleHAiOjE4MjE0NDI4NDIsImlhdCI6MTc5MTg4NDk4OSwianRpIjoiNDdkYjA2ZjgtYWQ5Mi00ZmU1LWFjOTMtMGM2OGZlZGY0NjA1IiwiaXNzIjoiaHR0cHM6Ly93d3cud29ya2J1ZGR5LmFpL2F1dGgvcmVhbG1zL2NvcGlsb3QiLCJhdWQiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsInN1YiI6ImQ1ZDIzNzUwLWQyYzYtNDZkMC04MmRjLTA4ZTJiMGU2MTE2YyIsInR5cCI6Ik9mZmxpbmUiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiNzg2NDAzZDQtN2NkNi00NGVjLWIzZTYtMGUzY2I4MzIzNmZhIiwic2NvcGUiOiJvcGVuaWQgYWNyIHByb2ZpbGUgYmFzaWMgd2ViLW9yaWdpbnMgcm9sZXMgb2ZmbGluZV9hY2Nlc3MgZW1haWwifQ.6w1Fg84FyAKJyr8vkJCnAkAy7WbK1qjjHrIz2r3gUkMrjsd6TBjPWFS7kK2tn5nF5_YJG4WvqQP8MPJqOMxvBw",
+    "refreshedAt": 1791884987432,
+    "token_type": "Bearer",
+    "uid": "d5d23750-d2c6-46d0-82dc-08e2b0e6116c",
+    "variant": "ai"
+  },
+  {
+    "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXVzhVVkZuS0lNSnl3cFdQWjBEWTZxeE9LQ2dpcVVjNXN3RHBkVjM1UUV3In0.eyJleHAiOjE4MjEyMjk5NTksImlhdCI6MTc5MTg4NDk4OSwiYXV0aF90aW1lIjoxNzg5NjkzOTU5LCJqdGkiOiIxN2M2ZmUzYS0wMzkxLTQyM2UtYTE0NS04NGEwNDJkZTVkZGMiLCJpc3MiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI4Nzk5MDQ5MC1kZTYzLTRmMjEtODJiYS1jNjYzMmNmZTVmMmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiMzA4NTdkMTMtMDY4Yy00NjQ1LWFmZjMtMzUwYTgxMzVlNWY4IiwiYWNyIjoiMCIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgb2ZmbGluZV9hY2Nlc3MgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6Ik1vdG8iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJjcmVhdGNvZGUiLCJnaXZlbl9uYW1lIjoiTW90byIsImVtYWlsIjoiODcyODY0NjcwQHFxLmNvbSJ9.fLlGvico018yrRDk3DbEv_gjYpLqqiiK84fBqSRHEu8-fN4DiB9bZz3BKdDboG28ZlgPWu6zKYdMHGTpnbJ3YY-9S0QGENFbhxyTkbp4o0kuPRkw2i50lLvSiDgL2kxwUBFf95ahVqCcd2JGj_FWoQiLQFWfWzlCqkRcR-0vLCQHQFB0rih83QDKSbI9r-68KaJ9SDbEZ5E6pT2XROyqQVXJDSnKLE532Wbi1tx4xvHVM2_fiuHiMnsmwSrmBkplh4qd_HPcMDL7UvWOL77JH7WmL2_9LJYY7gj5OVMpaw7Lcad66uatq-qFFm8aaVkcf7Og6mZgh6fxsqRPfc7a9A",
+    "auth_raw": {
+      "account": {
+        "accountType": "",
+        "areaInfoComplete": true,
+        "deployStatus": {
+          "detailMsg": "",
+          "statusCode": 0,
+          "statusMsg": ""
+        },
+        "idp": "",
+        "isAdmin": false,
+        "isCreator": false,
+        "isCurrentOneIdEnterprise": false,
+        "isCurrentOneIdPersonal": false,
+        "isFirstLogin": false,
+        "lastLogin": true,
+        "nickname": "creatcode",
+        "oneidAccountId": "",
+        "pluginEnabled": true,
+        "sso": {
+          "domain": "",
+          "domainModifiedTimes": 0
+        },
+        "type": "personal",
+        "uid": "87990490-de63-4f21-82ba-c6632cfe5f2e",
+        "uin": "450701734807"
+      },
+      "accounts": [
+        {
+          "accountType": "",
+          "areaInfoComplete": true,
+          "deployStatus": {
+            "detailMsg": "",
+            "statusCode": 0,
+            "statusMsg": ""
+          },
+          "idp": "",
+          "isAdmin": false,
+          "isCreator": false,
+          "isCurrentOneIdEnterprise": false,
+          "isCurrentOneIdPersonal": false,
+          "isFirstLogin": false,
+          "lastLogin": true,
+          "nickname": "creatcode",
+          "oneidAccountId": "",
+          "pluginEnabled": true,
+          "sso": {
+            "domain": "",
+            "domainModifiedTimes": 0
+          },
+          "type": "personal",
+          "uid": "87990490-de63-4f21-82ba-c6632cfe5f2e",
+          "uin": "450701734807"
+        }
+      ],
+      "allAccounts": [
+        {
+          "accountType": "",
+          "areaInfoComplete": true,
+          "deployStatus": {
+            "detailMsg": "",
+            "statusCode": 0,
+            "statusMsg": ""
+          },
+          "idp": "",
+          "isAdmin": false,
+          "isCreator": false,
+          "isCurrentOneIdEnterprise": false,
+          "isCurrentOneIdPersonal": false,
+          "isFirstLogin": false,
+          "lastLogin": true,
+          "nickname": "creatcode",
+          "oneidAccountId": "",
+          "pluginEnabled": true,
+          "sso": {
+            "domain": "",
+            "domainModifiedTimes": 0
+          },
+          "type": "personal",
+          "uid": "87990490-de63-4f21-82ba-c6632cfe5f2e",
+          "uin": "450701734807"
+        }
+      ],
+      "auth": {
+        "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXVzhVVkZuS0lNSnl3cFdQWjBEWTZxeE9LQ2dpcVVjNXN3RHBkVjM1UUV3In0.eyJleHAiOjE4MjEyMjk5NTksImlhdCI6MTc4OTY5Mzk3MSwiYXV0aF90aW1lIjoxNzg5NjkzOTU5LCJqdGkiOiIwZjAzYmM2Ni0yNWIwLTQyM2ItYmY2ZC1kNmJiYmNlN2VmOTMiLCJpc3MiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI4Nzk5MDQ5MC1kZTYzLTRmMjEtODJiYS1jNjYzMmNmZTVmMmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiMzA4NTdkMTMtMDY4Yy00NjQ1LWFmZjMtMzUwYTgxMzVlNWY4IiwiYWNyIjoiMCIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgb2ZmbGluZV9hY2Nlc3MgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6Ik1vdG8iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJjcmVhdGNvZGUiLCJnaXZlbl9uYW1lIjoiTW90byIsImVtYWlsIjoiODcyODY0NjcwQHFxLmNvbSJ9.e9SyJ3zS3gPqYFUE_BSAHG-cmMQllZeZF2Qt7KbdnMKYb0IziBgLm-3ea66gIUsSx2dmhHqSwAagnntez0pxbLvsMHvITNPWCYR_1aFY9Qj5i6om3O27gvE4dZpyW9VNPm6b4ZcQUwMkGugBiWS_0VgWyqrrR2LbEDlgxdEMW1PcExHrqfiljk6woI0hIrYZZc59TPZd4lgh4D1IXbhu3LxMV1hEgU58uqQGWfQTsM7lmI9cp6oxAiSBA409oWGC9TbGATbHFfngxscsCO3VG9RSS5RmvHh3-9dHU2XVpuSRav5aYkaZakl0NdFksdNsbO9PXZ5faJkChITwM0-_VQ",
+        "domain": "www.workbuddy.ai",
+        "expiresAt": 1821229959656,
+        "expiresIn": 31535985,
+        "lastRefreshTime": 1789693976879,
+        "refreshExpiresAt": 1821229959656,
+        "refreshExpiresIn": 31535985,
+        "refreshToken": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjMWM0OWU5Yi0wYWU2LTQyMWMtOTVmOS05ODdiMDk4NjljNTUifQ.eyJleHAiOjE4MjEyMjk5NTksImlhdCI6MTc4OTY5Mzk3MSwianRpIjoiNWJiZjc4MjgtMzlhZC00ZTUzLWFhZmQtMDE2OWNjNGU2N2RlIiwiaXNzIjoiaHR0cHM6Ly93d3cud29ya2J1ZGR5LmFpL2F1dGgvcmVhbG1zL2NvcGlsb3QiLCJhdWQiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsInN1YiI6Ijg3OTkwNDkwLWRlNjMtNGYyMS04MmJhLWM2NjMyY2ZlNWYyZSIsInR5cCI6Ik9mZmxpbmUiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiMzA4NTdkMTMtMDY4Yy00NjQ1LWFmZjMtMzUwYTgxMzVlNWY4Iiwic2NvcGUiOiJvcGVuaWQgYWNyIHByb2ZpbGUgYmFzaWMgd2ViLW9yaWdpbnMgcm9sZXMgb2ZmbGluZV9hY2Nlc3MgZW1haWwifQ.9jCaaI-MTjqOxkdQ8_46med4H1JV0qT3K--nfFDd7CuQwe9rKBE3t3KvzgTPQg85Nft5eNx9ZNhSCKkfpuLuhg",
+        "scope": "openid profile offline_access email",
+        "sessionState": "30857d13-068c-4645-aff3-350a8135e5f8",
+        "tokenType": "Bearer"
+      }
+    },
+    "createdAt": 1789693981498,
+    "domain": "www.workbuddy.ai",
+    "email": null,
+    "enterpriseId": null,
+    "enterpriseName": null,
+    "expiresAt": 1821229957582,
+    "id": "f7ae1128-f502-4880-90d6-ceb520cc35ae",
+    "nickname": "creatcode",
+    "profile_raw": {
+      "accountType": "",
+      "areaInfoComplete": true,
+      "deployStatus": {
+        "detailMsg": "",
+        "statusCode": 0,
+        "statusMsg": ""
+      },
+      "idp": "",
+      "isAdmin": false,
+      "isCreator": false,
+      "isCurrentOneIdEnterprise": false,
+      "isCurrentOneIdPersonal": false,
+      "isFirstLogin": false,
+      "lastLogin": true,
+      "nickname": "creatcode",
+      "oneidAccountId": "",
+      "pluginEnabled": true,
+      "sso": {
+        "domain": "",
+        "domainModifiedTimes": 0
+      },
+      "type": "personal",
+      "uid": "87990490-de63-4f21-82ba-c6632cfe5f2e",
+      "uin": "450701734807"
+    },
+    "refreshExpiresAt": 1821229957582,
+    "refresh_token": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjMWM0OWU5Yi0wYWU2LTQyMWMtOTVmOS05ODdiMDk4NjljNTUifQ.eyJleHAiOjE4MjEyMjk5NTksImlhdCI6MTc5MTg4NDk4OSwianRpIjoiZDVhZmQzZDktZTYyZi00ZDQ0LWE1ZWYtZGRmOTE2ZDE4NDc4IiwiaXNzIjoiaHR0cHM6Ly93d3cud29ya2J1ZGR5LmFpL2F1dGgvcmVhbG1zL2NvcGlsb3QiLCJhdWQiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsInN1YiI6Ijg3OTkwNDkwLWRlNjMtNGYyMS04MmJhLWM2NjMyY2ZlNWYyZSIsInR5cCI6Ik9mZmxpbmUiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiMzA4NTdkMTMtMDY4Yy00NjQ1LWFmZjMtMzUwYTgxMzVlNWY4Iiwic2NvcGUiOiJvcGVuaWQgYWNyIHByb2ZpbGUgYmFzaWMgd2ViLW9yaWdpbnMgcm9sZXMgb2ZmbGluZV9hY2Nlc3MgZW1haWwifQ.u8wijwVuhe9gbKjXllRAnhbsXRKc-jNOxz0SWNowHEuuQqxOBplz9lwjIatV40mCkV9wd71AHgSjkOV5fbri2Q",
+    "refreshedAt": 1791884987582,
+    "token_type": "Bearer",
+    "uid": "87990490-de63-4f21-82ba-c6632cfe5f2e",
+    "variant": "ai"
+  },
+  {
+    "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXVzhVVkZuS0lNSnl3cFdQWjBEWTZxeE9LQ2dpcVVjNXN3RHBkVjM1UUV3In0.eyJleHAiOjE4MjE2MTAzODksImlhdCI6MTc5MTg4NDk4OSwiYXV0aF90aW1lIjoxNzkwMDc0Mzg5LCJqdGkiOiI5Yjk2ODdjZi1mMGZlLTQ5ZGItODIyZi1kMGQ4YWNkZmVhMmEiLCJpc3MiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1Nzk2NmFjMy1mOGM5LTQ1ZGUtYmU5Ny02NjNjOWNjNDVhYWEiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiOTIwOTdiNTUtMTk3Yi00YzQ1LTkxOTctNmIzY2Y2YjMxZmVkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgb2ZmbGluZV9hY2Nlc3MgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6InJlcGx5IiwicHJlZmVycmVkX3VzZXJuYW1lIjoiMTQ3MTU3IiwiZ2l2ZW5fbmFtZSI6InJlcGx5IiwiZW1haWwiOiIxNDcxNTcwNDY2QHFxLmNvbSJ9.rMEkdc1-jwHuTowyFwSbQISsjn1PdmjHq12YsCj2Ay5mAzltpfOQoEdpLd-az6MuMadtRFdbDrIDqYaZSwUDQmxOBA2j8p8c7GsX9kZC63eeD7DY7-aP0YGFQjKm5tchsr14-zhL20iMGnr3kwN6lDXR62lyduxIK0UO3xMq0dNiiXqFdnW3XlkZKYBsLbgNsocwpzOsz_eeb2gkQO6BFzc0PfRLRz3nJpmHU59EoCqzmKpxs-C0o5BrarmOq19Vgyenc5ztt_WOutFJolHZJw-7si8VxWTMbUDhvms5-BOQQPJkwLXyptuDkoSw8741PrgOkDESMsxSX6-jLvNF8A",
+    "auth_raw": {
+      "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXVzhVVkZuS0lNSnl3cFdQWjBEWTZxeE9LQ2dpcVVjNXN3RHBkVjM1UUV3In0.eyJleHAiOjE4MjE2MTAzODksImlhdCI6MTc5MDA3NDM4OSwiYXV0aF90aW1lIjoxNzkwMDc0Mzg5LCJqdGkiOiJmMjcyZTA5MC1hNGYyLTRlYTgtYmIwNC05YjMyZjcyYWNhMTYiLCJpc3MiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1Nzk2NmFjMy1mOGM5LTQ1ZGUtYmU5Ny02NjNjOWNjNDVhYWEiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiOTIwOTdiNTUtMTk3Yi00YzQ1LTkxOTctNmIzY2Y2YjMxZmVkIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIqIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgb2ZmbGluZV9hY2Nlc3MgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6InJlcGx5IiwicHJlZmVycmVkX3VzZXJuYW1lIjoiMTQ3MTU3IiwiZ2l2ZW5fbmFtZSI6InJlcGx5IiwiZW1haWwiOiIxNDcxNTcwNDY2QHFxLmNvbSJ9.Aj0K6EWvozLPtjJTxKsNzQoaXzubN7g4k8vN1uhXQ1LoaUlZBwlSSs6Je_curRFzKtjji0NHebqysTKxeVi9gRsYwpjlXCtae9H702-Ef-d8EPjQ9Fz5F1c4sOcuvvvqPT4t9y51lV5l5mvHkIDgTO7mEsdoWCW0Qs9suXI_XXk561r0feLQU8Nl8riqYJBvFiC8hjCfsr_-Cux2kv7IRk314_QCKrx6XQbPRuYE9ZgFfkniOCjK2VeKTVuBHfcn2svbNTiM7n_C-kpdPGA-MuuQrqlzAkWt3pn5Ml_qsuto4pbF-U4nSwage2plr04R0lbUflFtexACEwyicyh34w",
+      "domain": "www.workbuddy.ai",
+      "expiresIn": 31535978,
+      "refreshExpiresIn": 31535978,
+      "refreshToken": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjMWM0OWU5Yi0wYWU2LTQyMWMtOTVmOS05ODdiMDk4NjljNTUifQ.eyJleHAiOjE4MjE2MTAzODksImlhdCI6MTc5MDA3NDM4OSwianRpIjoiNTVkYTk0MDAtNzZhNi00NzYyLWE0ODktOTg4NTkxNTk1YTUwIiwiaXNzIjoiaHR0cHM6Ly93d3cud29ya2J1ZGR5LmFpL2F1dGgvcmVhbG1zL2NvcGlsb3QiLCJhdWQiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsInN1YiI6IjU3OTY2YWMzLWY4YzktNDVkZS1iZTk3LTY2M2M5Y2M0NWFhYSIsInR5cCI6Ik9mZmxpbmUiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiOTIwOTdiNTUtMTk3Yi00YzQ1LTkxOTctNmIzY2Y2YjMxZmVkIiwic2NvcGUiOiJvcGVuaWQgYWNyIHByb2ZpbGUgYmFzaWMgd2ViLW9yaWdpbnMgcm9sZXMgb2ZmbGluZV9hY2Nlc3MgZW1haWwifQ.bXXJQ9v69eiEBXqpD4h6jEFewv462-QyBb3U0ktCujFgJMS9_rZsgWZRBLeMIbRhSEUqVxTY-dQ7veF-FOcRzw",
+      "scope": "openid profile offline_access email",
+      "sessionState": "92097b55-197b-4c45-9197-6b3cf6b31fed",
+      "tokenType": "Bearer"
+    },
+    "createdAt": 1790074412892,
+    "domain": "www.workbuddy.ai",
+    "email": null,
+    "enterpriseId": null,
+    "enterpriseName": null,
+    "expiresAt": 1821610387746,
+    "id": "6e4eb19f-e033-4db7-a449-d86f2201ccd0",
+    "nickname": "147157",
+    "profile_raw": {
+      "accountType": "",
+      "areaInfoComplete": true,
+      "deployStatus": {
+        "detailMsg": "",
+        "statusCode": 0,
+        "statusMsg": ""
+      },
+      "idp": "",
+      "isAdmin": false,
+      "isCreator": false,
+      "isCurrentOneIdEnterprise": false,
+      "isCurrentOneIdPersonal": false,
+      "isFirstLogin": false,
+      "lastLogin": true,
+      "nickname": "147157",
+      "oneidAccountId": "",
+      "pluginEnabled": true,
+      "sso": {
+        "domain": "",
+        "domainModifiedTimes": 0
+      },
+      "type": "personal",
+      "uid": "57966ac3-f8c9-45de-be97-663c9cc45aaa",
+      "uin": "450701936279"
+    },
+    "refreshExpiresAt": 1821610387746,
+    "refresh_token": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjMWM0OWU5Yi0wYWU2LTQyMWMtOTVmOS05ODdiMDk4NjljNTUifQ.eyJleHAiOjE4MjE2MTAzODksImlhdCI6MTc5MTg4NDk4OSwianRpIjoiMzAxYzg3OTUtOGM0ZS00MmQxLWE5NjktYzcwZWU2NjQ2MTQzIiwiaXNzIjoiaHR0cHM6Ly93d3cud29ya2J1ZGR5LmFpL2F1dGgvcmVhbG1zL2NvcGlsb3QiLCJhdWQiOiJodHRwczovL3d3dy53b3JrYnVkZHkuYWkvYXV0aC9yZWFsbXMvY29waWxvdCIsInN1YiI6IjU3OTY2YWMzLWY4YzktNDVkZS1iZTk3LTY2M2M5Y2M0NWFhYSIsInR5cCI6Ik9mZmxpbmUiLCJhenAiOiJjb25zb2xlIiwic2lkIjoiOTIwOTdiNTUtMTk3Yi00YzQ1LTkxOTctNmIzY2Y2YjMxZmVkIiwic2NvcGUiOiJvcGVuaWQgYWNyIHByb2ZpbGUgYmFzaWMgd2ViLW9yaWdpbnMgcm9sZXMgb2ZmbGluZV9hY2Nlc3MgZW1haWwifQ.EOZ4KPxcK_L85FMjXyYlw9uQWN4fUn9RO40P3rUwfSnCWgQKmBVtlcp_b7cU7rbIK3EdUT9axWRNDPqKkEguoA",
+    "refreshedAt": 1791884987746,
+    "token_type": "Bearer",
+    "uid": "57966ac3-f8c9-45de-be97-663c9cc45aaa",
+    "variant": "ai"
+  }
+]

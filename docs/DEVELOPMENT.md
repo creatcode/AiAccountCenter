@@ -90,7 +90,7 @@ dev-env.ps1 只加载当前进程环境，固定使用本轮验证的 Rust 1.98.
 开发授权后：
 
 1. 重新读取目标文档、检查 Git 状态和所有重名文件，记录本套文档摘要。若已有 Git，沿用历史，不重新初始化。
-2. 对尚无 Git 的目录建立独立本地仓库，先提交当前文档，形成可恢复基线；本地基线提交不包含凭据，不 push。
+2. 对尚无 Git 的目录建立独立本地仓库，先提交当前文档，形成可恢复基线；本地基线纳入用户授权提交的测试备份和重要资料，不擅自加入其他账号数据，不 push。
 3. 添加只读用途的 upstream 远程，拉取 v0.1.60，核对标签最终提交为 d0badb47a9253f633e02888da9a62cff107809ec。GitHub origin/远程发布仓库待用户提供，不自行创建。
 4. 将固定上游历史合入本地文档历史，可使用 git merge --allow-unrelated-histories --no-commit。导入属于已授权开发，不在本文档任务内执行。
 5. 逐项处理重名冲突：保留 AiAccountCenter 的 README、AGENTS、方案和状态语义；保留上游原 README 到 docs/upstream/README.md，记录其来源；上游 LICENSE、vendor 声明和必要原注释保留。
@@ -104,7 +104,7 @@ dev-env.ps1 只加载当前进程环境，固定使用本轮验证的 Rust 1.98.
 ## 5. 安全启动前必须完成
 
 - 新 Rust AiAccountCenter 数据命名空间与旧 Python 数据、上游 ~/.wb-switch、用户真实客户端目录隔离，不因同名目录自动导入旧库。
-- 所有调试凭据为合成数据，自动任务、自动 Hook 安装和自动更新关闭。
+- 普通调试默认使用合成数据；用户提供的 testdata/ 可用于隔离导入/解析验证，不当成合成数据，也不据此执行真实账号任务。自动任务、自动 Hook 安装和自动更新关闭。
 - WB_SWITCH_HOME 只可作为审核后的上游基线测试覆盖，因为它会同时改变 CLI 等路径；正式新参数应区分应用存储与真实客户端。
 - Windows WebView2 数据目录与浏览器测试 profile 在 .runtime/，测试 TEMP 在 .tmp/。创建 WebView 前的运行时/版本检测与原生失败提示按 DEPLOYMENT.md 第 4 节实现；本机已安装 Runtime 不代替干净机器缺失场景验收。
 - 查看测试代码是否使用系统 home、系统临时目录或真实客户端发现；必要时先修复路径注入再运行。
@@ -141,6 +141,8 @@ Linux 仅选择 core/server 包构建，检查 cargo tree 的依赖闭包与运�
 
 ## 8. 忽略与提交
 
-代码开发开始后，按实际生成目录维护 .gitignore，忽略 .tools、.downloads、.cache、.tmp、.runtime、node_modules、build、dist、凭据与 secret。保留 Cargo.lock、package-lock.json、必要来源/补丁和部署模板；不把整个 vendor 目录笼统忽略。
+当前为私有仓库的开发测试阶段，.gitignore 仅忽略项目根的可重新生成工具、依赖、缓存、临时数据和构建产物：.tools、.cache、.tmp、.runtime、node_modules、build、dist。源码、项目文档、配置、Cargo.lock、package-lock.json、必要来源/补丁、部署模板、重要参考资料和用户提供的 testdata/ 纳入版本管理；不按凭据字段、文件类型或目录名笼统忽略重要文件，不把整个 vendor 或 .downloads 目录排除。工具安装包位于外部环境根 downloads/；需保留的测试证据放在项目文档中提交，不混入临时缓存目录。
+
+本轮按用户明确要求取消 testdata/ 和 .downloads/ 的忽略，测试备份作为原始资料提交到本地私有仓库，不改写其内容。Git 提交范围与正式发行包范围分别管理，当前不执行发布。
 
 当前允许创建环境准备所需的工具目录和脚本，按需维护 .gitignore；不创建产品源码或产品依赖锁文件，不重新初始化已有 Git。所有新增环境、检查命令、实际写入路径与目录外限制写入实施状态。

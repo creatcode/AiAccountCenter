@@ -1,9 +1,8 @@
-.tools/
-.downloads/
-.cache/
-.tmp/
-.runtime/
-node_modules/
-build/
-dist/
-testdata/
+# 仅忽略可重新生成的工具、依赖、缓存和构建产物。
+/.tools/
+/.cache/
+/.tmp/
+/.runtime/
+/node_modules/
+/build/
+/dist/

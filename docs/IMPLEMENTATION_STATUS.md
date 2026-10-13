@@ -31,8 +31,8 @@
 - scripts/check-env.ps1 已从项目根和环境根各运行通过，最终日志为 E:\rustenv\checks\AiAccountCenter\verification-20261014.log：复用 E:\Nodejs 的 Node 22.19.0 / npm 10.9.3，MSVC x64 与 E:\Windows Kits\10 的 10.0.26100.0 头文件/库完成最小 C 程序编译运行（msvc-sdk-ok），Rust 程序链接运行（rust-link-ok），rustfmt/clippy 版本调用成功。
 - npm 实际缓存为 E:\rustenv\cache\npm，TEMP/TMP 为 E:\rustenv\tmp，Rust/Cargo homes 在指定环境根。入口加载和验证前后用户/系统持久 PATH 未变化。产品 CARGO_TARGET_DIR 动态指向项目 build/cargo。
 - 官方微软安装器仍使用标准系统目录、注册表、用户 AppData 日志/状态；保留既有 E:\Microsoft Visual Studio\Packages / Shared 策略，不把这些不可避免影响宣称为完全目录隔离。详细来源、摘要、目录与失败处理见 DEVELOPMENT.md。
-- 工具不提交、不随源码或发行包打包；项目 .gitignore 已覆盖下载、缓存、临时数据、build/dist/node_modules。误下载的 Node 便携包仅留在外部 downloads，未安装或使用；后续只补缺项。
-- 用户提供 testdata/workbuddy国际.json（5 条）和 testdata/workbuddy国内.json（2 条），均可解析为 JSON 数组，含凭据相关字段。仅核对格式与数量，未执行账号请求；testdata 默认本地保留，不提交、不打包，不当成合成数据，供后续隔离导入验证。
+- 工具不提交、不随源码或发行包打包；项目 .gitignore 仅覆盖可重新生成的工具、缓存、临时数据、build/dist/node_modules，不排除重要参考资料或 testdata。误下载的 Node 便携包仅留在外部 downloads，未安装或使用；后续只补缺项。
+- 用户提供 testdata/workbuddy国际.json（5 条）和 testdata/workbuddy国内.json（2 条），均可解析为 JSON 数组，含凭据相关字段。仅核对格式与数量，未执行账号请求；用户已明确当前为私有仓库的开发测试阶段，testdata 纳入版本管理并提交，保留原始内容，不当成合成数据，供后续隔离导入验证；源码提交与正式发行包内容分别管理。
 - WebView2 已登记复用，Tauri/产品全量构建与真实 WebView 创建仍待 T01；Linux/Docker、真实平台、客户端写入和发行兼容仍未验收。
 
 ### 2.2 是否具备完整开发、测试和打包条件
