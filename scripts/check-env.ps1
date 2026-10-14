@@ -1,10 +1,23 @@
 #Requires -Version 7.0
+<#
+.SYNOPSIS
+    检查当前开发环境是否满足 AiAccountCenter 的需要。
+
+.DESCRIPTION
+    以“工具是否已安装且可用”为判断前提，不约定、不要求、也不探测任何固定目录名或盘符。
+    检查项：工具解析、版本、Node 最低版本、MSVC/Windows SDK 最小 C 编译运行、Rust 链接运行、npm 缓存路径（仅在指定环境根时校验）。
+
+    环境根可选：-EnvironmentRoot 参数或 AI_ACCOUNT_CENTER_ENV_ROOT 环境变量。未指定时按 PATH 上已有工具链检查。
+    验证产物写入：指定了环境根则写 <环境根>/checks/AiAccountCenter/，否则写项目 .cache/checks/。
+#>
 param([string]$EnvironmentRoot = $env:AI_ACCOUNT_CENTER_ENV_ROOT)
 
 $ErrorActionPreference = 'Stop'
 . (Join-Path $PSScriptRoot 'dev-env.ps1') -EnvironmentRoot $EnvironmentRoot
+
 foreach ($command in @('git.exe', 'node.exe', 'npm.cmd', 'rustc.exe', 'cargo.exe', 'cl.exe', 'link.exe', 'rc.exe')) {
-    $tool = Get-Command $command -ErrorAction Stop
+    $tool = Get-Command $command -ErrorAction SilentlyContinue
+    if (-not $tool) { throw "缺少必需工具：$command；请确认开发环境安装路径后按 docs/DEVELOPMENT.md 准备缺项。" }
     Write-Host "$command : $($tool.Source)"
 }
 & git.exe --version
@@ -23,9 +36,14 @@ if ($LASTEXITCODE -ne 0) { throw 'rustfmt 不可执行。' }
 & cargo.exe clippy --version
 if ($LASTEXITCODE -ne 0) { throw 'clippy 不可执行。' }
 
-$probeRoot = Join-Path $env:AI_ACCOUNT_CENTER_ENV_ROOT 'checks/AiAccountCenter'
+$projectRoot = Split-Path -Parent $PSScriptRoot
+if ($env:AI_ACCOUNT_CENTER_ENV_ROOT) {
+    $probeRoot = Join-Path $env:AI_ACCOUNT_CENTER_ENV_ROOT 'checks/AiAccountCenter'
+} else {
+    $probeRoot = Join-Path $projectRoot '.cache/checks'
+}
 if (-not (Test-Path -LiteralPath $probeRoot)) {
-    New-Item -ItemType Directory -Path $probeRoot | Out-Null
+    New-Item -ItemType Directory -Path $probeRoot -Force | Out-Null
 }
 $cSource = Join-Path $probeRoot 'environment-probe.c'
 $cText = "#include <windows.h>`n#include <stdio.h>`nint main(void) { printf(`"msvc-sdk-ok %lu\n`", GetCurrentProcessId()); return 0; }`n"
@@ -47,6 +65,10 @@ try {
 } finally {
     Pop-Location
 }
-$actualCache = & npm.cmd config get cache
-if ($LASTEXITCODE -ne 0 -or $actualCache.Trim() -ne $env:npm_config_cache) { throw 'npm 缓存路径未按指定环境根生效。' }
-Write-Host "环境检查通过；验证产物：$probeRoot；npm 缓存：$actualCache"
+if ($env:AI_ACCOUNT_CENTER_ENV_ROOT) {
+    $actualCache = & npm.cmd config get cache
+    if ($LASTEXITCODE -ne 0 -or $actualCache.Trim() -ne $env:npm_config_cache) { throw 'npm 缓存路径未按指定环境根生效。' }
+    Write-Host "环境检查通过；验证产物：$probeRoot；npm 缓存：$actualCache"
+} else {
+    Write-Host "环境检查通过；验证产物：$probeRoot"
+}

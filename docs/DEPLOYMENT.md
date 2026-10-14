@@ -89,6 +89,13 @@ Rust/Tauri 桌面运行需要 WebView2；用户不需要安装 Rust、Node、Pyt
 
 实际验证启动、登录、主窗口、托盘、关闭/明确退出、后台任务、悬浮窗、多窗口焦点及通知。安装/升级前备份，卸载默认保留数据；Windows 代码签名与 Tauri 更新签名分开记录，未签名测试包不得宣称已签名发行。
 
+#### 更新签名密钥（Tauri updater）
+
+- 位置：公钥在 `src-tauri/tauri.conf.json` 的 `plugins.updater.pubkey`（base64/minisign 公钥，可公开）；私钥在项目根 `tauri-signing.key`（公钥 `tauri-signing.key.pub` 同目录）。**当前为私有仓库开发测试阶段，按用户 2026-10-14 明确要求：密钥对暂不加入 .gitignore、随仓库跟踪，便于多处调试**；正式发布前必须改为不跟踪（移出仓库）并轮换密钥，CI 用 secret 提供：`TAURI_SIGNING_PRIVATE_KEY`（或 `TAURI_SIGNING_PRIVATE_KEY_PATH`）+ `TAURI_SIGNING_PRIVATE_KEY_PASSWORD`（无口令时省略）。
+- 发布时要开 `bundle.createUpdaterArtifacts: true`（当前 `false`，仅开发）；开启后 `tauri build` 会用上述私钥给更新包签名并产出 `latest.json`。
+- 更新源固定为自有仓库：`https://github.com/creatcode/AiAccountCenter/releases/latest/download/latest.json`（与 `core/src/modules/update.rs` 的 manifest 形态一致）。不得复用上游 workbuddy-switch 的公钥、私钥或更新地址。
+- **轮换（能否改）：公钥可随时更换，但换后必须重新构建并让所有已安装客户端先升级到「带新公钥」的版本，再停用旧私钥**——已安装客户端只认构建时烧进去的公钥。当前尚无已发布版本、没有客户端认过这对密钥，因此现在换密钥零成本。本地这对密钥为无口令（`--ci` 生成），正式发布前建议在自己机器上用带口令方式重新生成。
+
 Windows/Linux 独立服务不因 WebView2 缺失而失败；桌面报错也不自动切换服务、开放端口或放宽 Web 权限。用户可主动按独立 Web 部署说明运行浏览器管理。
 
 官方依据：[Tauri Windows 安装包选项](https://v2.tauri.app/distribute/windows-installer/#webview2-installation-options)、[Tauri Windows 配置](https://v2.tauri.app/reference/config/#windowsconfig)、[微软 Runtime 分发与检测](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution)、[Evergreen 与固定版](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/evergreen-vs-fixed-version)。核对日期：2026-10-13；字段与行为以实际锁定版本验证。

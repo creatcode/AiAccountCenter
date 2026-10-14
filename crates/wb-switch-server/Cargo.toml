@@ -1,0 +1,18 @@
+[package]
+name = "wb-switch-server"
+version = "0.1.1"
+edition = "2021"
+description = "AiAccountCenter 独立 HTTP 服务 + CLI（桌面端之外的浏览器管理形态）"
+
+[[bin]]
+name = "ai-account-center-server"
+path = "src/main.rs"
+
+[dependencies]
+wb-switch-core = { path = "../wb-switch-core" }
+axum = "0.7"
+# signal：Ctrl+C 优雅退出并释放实例租约，否则崩溃后的租约要等 TTL 才过期，
+# 期间 restore 会误判「还有实例在用这个数据目录」。
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "signal"] }
+serde_json = "1"
+rust-embed = "8"

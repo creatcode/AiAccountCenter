@@ -2,7 +2,7 @@
 
 项目名统一为 AiAccountCenter，继续采用 Rust 路线。基于 [changexbc/workbuddy-switch](https://github.com/changexbc/workbuddy-switch) 扩展的独立账号管理项目，采用 Rust + React + TypeScript，覆盖 WorkBuddy 国内/国际版、CodeBuddy 工具、Trae 和 Qoder。
 
-文档日期：2026-10-14。当前阶段：最小 Windows 开发环境已安装并验证；尚未引入产品源码或开始功能开发。环境实际结果见 docs/IMPLEMENTATION_STATUS.md。
+文档日期：2026-10-14。当前阶段：本机按缺项补齐开发环境（Rust 工具链、MSVC、Windows SDK）并完成最小验证；Git/Node/npm/WebView2 复用已有安装。尚未引入产品源码或开始功能开发。环境实际结果见 docs/IMPLEMENTATION_STATUS.md。
 
 ## 项目定位
 
@@ -47,4 +47,4 @@ Windows 桌面首版提供在线与离线安装包：检测并复用满足要求
 
 当前目录只有文档，没有可运行的 AiAccountCenter 程序。文档中的接口、参数、目录结构和部署配置若标记为“设计目标”，须实现后才能使用。
 
-用户已明确恢复并优先补齐缺失开发环境，本机新增工具、安装包和工具缓存集中到 E:\rustenv；已有兼容 Node/Git/SDK/WebView2 直接复用。开发环境不提交、不随产品打包，其他机器按开发文档指定环境根并补缺；Agent 不执行项目目录改名。源码导入、依赖准备、开发、真实账号操作、客户端写入和发布分别遵循 [AGENTS.md](AGENTS.md) 的授权规则。
+开发环境以“项目所需工具是否已安装”为判断前提，新增工具、安装包和工具缓存放在项目之外、由使用者指定的目录。文档不约定、不要求、也不探测任何固定目录名或盘符；脚本通过 `-EnvironmentRoot` 参数或 `AI_ACCOUNT_CENTER_ENV_ROOT` 环境变量接收实际路径，检测到缺项时先询问用户希望安装的路径。本机当前取值只作为记录写在 [开发环境文档第 1.1 节](docs/DEVELOPMENT.md)，不作为其他机器的要求。已有兼容 Node/Git/SDK/WebView2 直接复用；开发环境不提交、不随产品打包，其他机器按缺项准备并重新验证；Agent 不执行项目目录改名。源码导入、依赖准备、开发、真实账号操作、客户端写入和发布分别遵循 [AGENTS.md](AGENTS.md) 的授权规则。

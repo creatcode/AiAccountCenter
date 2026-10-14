@@ -6,3 +6,14 @@
 /node_modules/
 /build/
 /dist/
+# /release/ 是 build.bat 拷出的安装包与签名（可再生产物），用户 2026-10-14 明确要求忽略。
+/release/
+
+# vendored Agent Companion 的依赖与内嵌 UI 产物（由 npm ci / build:embed 重新生成）。
+# 根锚定的 /node_modules/ 覆盖不到嵌套目录，必须显式列出，否则会被整包提交（约 166MB）。
+/vendor/agent-companion/node_modules/
+/vendor/agent-companion/dist-embed/
+
+# 注意：src-tauri/binaries/agent-studio-runtime-*.exe（约 4.4MB）刻意 **不** 忽略——
+# 用户 2026-10-14 决定随仓库跟踪，使新克隆无需先跑 prepare 即可 cargo check/build 桌面 crate。
+# 同理 tauri-signing.key / tauri-signing.key.pub 在开发测试阶段也随仓库跟踪（发布前须移出并轮换）。

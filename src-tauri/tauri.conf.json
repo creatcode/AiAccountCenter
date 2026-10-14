@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "AiAccountCenter",
+  "version": "0.1.1",
+  "identifier": "com.aiaccountcenter.app",
+  "build": {
+    "beforeDevCommand": "npm run dev:desktop",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build:desktop",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "macOSPrivateApi": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "AiAccountCenter · 账号管理",
+        "width": 1000,
+        "height": 720,
+        "minWidth": 720,
+        "minHeight": 520,
+        "decorations": true,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true,
+        "trafficLightPosition": {
+          "x": 16,
+          "y": 30
+        },
+        "visible": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "createUpdaterArtifacts": true,
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "externalBin": ["binaries/agent-studio-runtime"]
+  },
+  "plugins": {
+    "updater": {
+      "endpoints": [
+        "https://github.com/creatcode/AiAccountCenter/releases/latest/download/latest.json"
+      ],
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDY2MkU4MERBNzZERUFCOTUKUldTVnE5NTIyb0F1Wmgxck9oQmM4ZUkvRlJuanVlU0czOXVBUlJ3UXMvQnFxMnpJVFVGMS81UnkK"
+    }
+  }
+}

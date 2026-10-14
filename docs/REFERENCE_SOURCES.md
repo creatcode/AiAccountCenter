@@ -71,16 +71,48 @@ Trae Work 原路径包含 TRAE SOLO CN，Trae CN 原路径为 Trae CN；名称�
 
 上游 Rust commands 耦合 AppHandle/State/AppState。选择所需协议与算法适配到 core，不能把第二套 AppState、调度器、React 组件树整体拼入主仓库。
 
-## 5. workbuddy2api-hub 国际版边界
+## 5. workbuddy2api-hub 参考边界（国际版 + 国内版任务与福利）
 
 固定源码入口：[906ca6a0 文件树](https://github.com/ardeyouxipianyi/workbuddy2api-hub/tree/906ca6a097e3e002415db53ea84c9b89c1589bed)。
 
-- wb_accounts.py：can_daily_chat、daily_chat_web、_daily_chat_web_upstream、daily_chat，参考国际任务资格与业务编排。
-- wb_webagent.py：沙箱连接、initialize、session/load、session/prompt、SSE/JSON-RPC 消息与 completed/failed 判断。
-- wb_activity.py：后续核对活动结果和奖励确认口径。
-- 仅参考国际认证/刷新/额度的必要补充，不采用国内账号模块、网关路由、模型池、代理体系或 Python 服务。
+**允许参考的范围**（2026-10-14 用户明确扩大，AGENTS.md 第 2 节同步更新；与旧表述冲突时以本节为准）：
+
+- 国际版：wb_accounts.py（can_daily_chat、daily_chat_web、_daily_chat_web_upstream、daily_chat，参考国际任务资格与业务编排）、wb_webagent.py（沙箱连接、initialize、session/load、session/prompt、SSE/JSON-RPC 消息与 completed/failed 判断）、wb_activity.py（活动结果和奖励确认口径）。仅参考国际认证/刷新/额度的必要补充。
+- **国内版任务与福利**：wb_tasks.py（成长任务查询/接取/领奖、`/v2/report` 事件上报、能量、连续打卡与补签/兑换、盲盒抽奖、猫猫旅行）及其实测约束，见 §5.1。
+
+**仍不采用**：国内账号模块、网关路由、模型池、代理体系、Python 服务本体。
+
 - 使用 Rust 的 reqwest/Tokio 实现必要流程；不承诺历史模型、奖励、路径一直有效。
 - 远端 completed 证明会话执行结束，奖励完成还需相应活动证据。任务超时保留远端 ID 并先复查，不重复创建。
+
+### 5.1 国内成长任务与福利（补核，2026-10-14）
+
+用户明确要求把「福利任务」纳入范围（Buddy 旅行、盲盒抽取、任务领奖等），并指出本项目对应板块。本轮按固定提交 906ca6a0 重新拉取归档核对，**SHA-256 与本文 §3 记录逐字节一致**（`557cffb3579fdc4d7ef9d6b5f0316163e5dc09467c699f66c791ea0e7a30b612`）。
+
+核对文件：`wb_tasks.py`（抬头自述「国内版成长任务与日常福利全自动完成引擎」）、`wb_activity.py`（活动结果与奖励确认口径）。
+
+服务端基点：`copilot.tencent.com`（chat）、`www.workbuddy.cn`（web 回退）、`www.codebuddy.cn`（bill/兑换）。
+
+| 能力 | 端点 | 备注 |
+| --- | --- | --- |
+| 成长任务列表 | `GET /v2/activity/growth/tasks` | 字段：task_code/title/description/jump_url/accept_status/task_type/progress{current,target}/reward_credit/reward_energy |
+| 批量接取 | `POST /v2/activity/growth/tasks/accept` | 分片，参考实现按 20 个一批 |
+| **任务领奖** | `POST /activity/growth/tasks/{code}/claim` | 失败回退 `www.workbuddy.cn/activity/growth/tasks/{code}/claim` |
+| **事件上报点亮** | `POST /v2/report` | 进度靠上报事件推进；见下「不可伪造」约束 |
+| 能量余额 | `GET /v2/activity/growth/energy` | |
+| 连续打卡 | `GET /activity/growth/streak` | 配套 `POST /activity/growth/makeup-cards/use`（补签卡）、`POST /activity/growth/redeem`（兑换）、`GET /activity/growth/heatmap` |
+| **盲盒/抽奖** | `GET /activity/growth/lottery/summary`、`POST /activity/growth/lottery/draw` | |
+| **猫猫旅行** | `GET /activity/growth/buddy/travel/status`、`POST .../travel/depart`、`POST .../travel/claim`、`GET .../travel/config` | 与主仓库 `TRAVEL_API_PREFIX` 同族 |
+| 成长中心资料 | `profile/growth-center` | 主仓库 travel.rs 已用到 |
+
+必须沿用的实现约束（来自参考实现的实测注释，不是推测）：
+
+- **不可伪造的任务**：`DESKTOP_ONLY_TASKS`（RichMeow_Chat / Library_read / Buddy_App / Buddy_App_QQ）上游只认桌面客户端真实行为信号（jump_url 为 `workbuddy://` 深链）。伪造 `/v2/report` 会被忽略或落到 heartbeat，进度恒为 0/1，claim 必然 400 `task not completed`。**正确处理是诚实跳过并给出深链，不是反复重试。**
+- **夜间窗口**：`black_cat` 等只在 23:00–08:00 上报才计数，每天 1 次、累计 3 天。
+- **事件去重**：专家/团队事件按 `(eventCode, id)` 去重，必须用**不同 id** 才能推进进度；重复同一 id 进度不动。参考实现备有已实测的专家/团队 id 池。
+- **风控**：请求间隔 ≥1.0s，并使用稳定设备指纹；不得为提效并发打点。
+
+复用状态：本节内容**已获授权复用**——用户 2026-10-14 明确要求把国内任务与福利纳入范围，AGENTS.md 第 2 节与本文 §5 已同步更新；协议、端点与实测约束可参考，实现仍须用 Rust 自行编写。
 
 ## 6. 许可与发布边界
 
